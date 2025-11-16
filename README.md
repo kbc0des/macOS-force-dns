@@ -11,7 +11,7 @@ Blocks adult content, malware, and prevents DNS-over-HTTPS (DoH) bypasses.
 - ✅ Persists across reboots and network changes
 - ✅ Disables DNS-over-HTTPS in Chrome, Firefox, Brave, Edge, Opera, Vivaldi, Safari
 - ✅ Disables Safari iCloud Private Relay (prevents DNS bypass)
-- ✅ Blocks VPN and Tor domains via `/etc/hosts` (60+ sites)
+- ✅ Blocks VPN, Tor, and browser-within-browser services via `/etc/hosts` (138 domains)
 - ✅ Applies system-wide to all users (admin installs for non-admin users)
 - ✅ Re-checks and re-applies DNS every 20 seconds
 - ✅ Self-healing: automatically restores settings if tampered with
@@ -160,7 +160,8 @@ Restart the browser after installation. Check browser settings:
 ## ⚠️ Important Notes
 
 - **Target Users**: Designed for admins to install system-wide for **non-admin users**. Non-admin users cannot bypass these restrictions.
-- **VPN/Tor Blocking**: Blocks 60+ VPN and Tor domains via `/etc/hosts`. Prevents installation, authentication, and updates of VPN clients.
+- **VPN/Tor Blocking**: Blocks 138 VPN, Tor, and remote desktop domains via `/etc/hosts`. Prevents installation, authentication, and updates of VPN clients.
+- **Browser-Within-Browser Blocking**: Blocks cloud desktop services (Kasm, Shadow, Paperspace), browser testing platforms (BrowserStack, LambdaTest), remote development environments (Replit, Gitpod, GitHub Codespaces), and enterprise browser isolation services.
 - **Admin Users**: Admin users can temporarily override settings, but they will auto-revert within 20 seconds.
 - **Network Services**: Script applies to all active services (Wi-Fi, Ethernet, Thunderbolt, etc.)
 - **Safari Private Relay**: Automatically disabled to prevent DNS bypass via iCloud+.
@@ -194,7 +195,7 @@ blocker-script/
 
 - **Forces Cloudflare Family DNS** which filters adult content and malware
 - **Disables DoH/DoT** to prevent DNS bypass at the application level
-- **Blocks VPN/Tor domains** via self-healing `/etc/hosts` entries (60+ domains)
+- **Blocks VPN/Tor/Remote Desktop domains** via self-healing `/etc/hosts` entries (138 domains)
 - **Disables Safari Private Relay** to prevent iCloud+ DNS bypass
 - **System-wide enforcement** that persists across network changes
 - **Automatic monitoring** detects and reverts unauthorized DNS changes every 20 seconds
@@ -228,11 +229,15 @@ Pull requests are welcome! For major changes, please open an issue first to disc
 A: Admins who want to enforce DNS filtering for **non-admin users** (e.g., parents, employers, educators). Non-admin users cannot bypass these restrictions without root access.
 
 ### Q: Will this block VPNs and Tor?
-A: Yes! It blocks 60+ VPN and Tor provider domains via `/etc/hosts`, preventing:
+A: Yes! It blocks 138 VPN, Tor, and bypass service domains via `/etc/hosts`, preventing:
 - VPN client downloads and updates
 - VPN authentication
 - Tor Browser downloads
 - Web-based proxy sites
+- Browser-within-browser services (Kasm, Shadow.tech, Paperspace)
+- Cloud development environments (Replit, Gitpod, GitHub Codespaces)
+- Browser testing platforms (BrowserStack, LambdaTest, Sauce Labs)
+- Remote desktop services (AWS WorkSpaces, Azure Virtual Desktop, Google Remote Desktop)
 
 **Note:** Already-installed VPN clients that connect via IP addresses may still work, but most require domain-based authentication which will be blocked.
 
@@ -252,6 +257,19 @@ A: **No.** The blocklist is conservative and only targets VPN/Tor/proxy domains.
 
 ### Q: What about Safari Private Relay?
 A: It's automatically disabled via managed preference. Non-admin users cannot re-enable it.
+
+### Q: Will this block cloud development tools?
+A: **Yes, by design.** The blocklist includes cloud development environments that can be used to bypass restrictions:
+- **Blocked:** Replit, Gitpod, GitHub Codespaces, CodeAnywhere, Coder
+- **Blocked:** Browser testing platforms (BrowserStack, LambdaTest, etc.)
+- **Blocked:** Cloud desktop services (Kasm, Shadow, Paperspace, etc.)
+
+**Important:** If you need these for legitimate work, you should either:
+1. Remove specific domains from `blocklist-vpn-tor.txt` before installation
+2. Use a separate machine/account for development work
+3. Run this on a managed/controlled environment where these services aren't needed
+
+The blocklist aims to close common bypass techniques. Adjust based on your specific use case.
 
 ### Q: What if I want to use different DNS servers?
 A: Edit the `force-dns.sh` file and change the `DNSV4_1`, `DNSV4_2`, `DNSV6_1`, and `DNSV6_2` variables to your preferred DNS servers.

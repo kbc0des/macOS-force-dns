@@ -111,3 +111,95 @@
 0.0.0.0 betternet.co
 0.0.0.0 www.betternet.co
 
+# Browser-Within-Browser & Remote Desktop Services
+# Kasm Workspaces
+0.0.0.0 kasmweb.com
+0.0.0.0 www.kasmweb.com
+0.0.0.0 kasm.io
+0.0.0.0 www.kasm.io
+0.0.0.0 kasm.cloud
+0.0.0.0 kasm-static-content.s3.amazonaws.com
+
+# Cloud Desktop Services
+0.0.0.0 shells.com
+0.0.0.0 www.shells.com
+0.0.0.0 shadow.tech
+0.0.0.0 www.shadow.tech
+0.0.0.0 paperspace.com
+0.0.0.0 www.paperspace.com
+0.0.0.0 paperspace.io
+0.0.0.0 runpod.io
+0.0.0.0 www.runpod.io
+0.0.0.0 vast.ai
+0.0.0.0 www.vast.ai
+
+# Nutanix Frame
+0.0.0.0 frame.nutanix.com
+0.0.0.0 nutanix.com
+0.0.0.0 www.nutanix.com
+
+# Browser Testing Services
+0.0.0.0 browserstack.com
+0.0.0.0 www.browserstack.com
+0.0.0.0 saucelabs.com
+0.0.0.0 www.saucelabs.com
+0.0.0.0 lambdatest.com
+0.0.0.0 www.lambdatest.com
+0.0.0.0 testingbot.com
+0.0.0.0 www.testingbot.com
+0.0.0.0 crossbrowsertesting.com
+0.0.0.0 www.crossbrowsertesting.com
+
+# Remote Gaming/Desktop
+0.0.0.0 parsec.app
+0.0.0.0 www.parsec.app
+0.0.0.0 puffin.com
+0.0.0.0 www.puffin.com
+
+# Enterprise Browser Isolation
+0.0.0.0 menlosecurity.com
+0.0.0.0 www.menlosecurity.com
+0.0.0.0 zscaler.com
+0.0.0.0 www.zscaler.com
+0.0.0.0 ericom.com
+0.0.0.0 www.ericom.com
+0.0.0.0 hysolate.com
+0.0.0.0 www.hysolate.com
+0.0.0.0 island.io
+0.0.0.0 www.island.io
+
+# Open Source Remote Desktop
+0.0.0.0 webtop.linuxserver.io
+0.0.0.0 guacamole.apache.org
+0.0.0.0 novnc.org
+0.0.0.0 www.novnc.org
+0.0.0.0 novnc.com
+0.0.0.0 www.novnc.com
+0.0.0.0 websockify.org
+0.0.0.0 www.websockify.org
+
+# Cloud Development Environments
+0.0.0.0 replit.com
+0.0.0.0 www.replit.com
+0.0.0.0 gitpod.io
+0.0.0.0 www.gitpod.io
+0.0.0.0 codespaces.githubusercontent.com
+0.0.0.0 codeanywhere.com
+0.0.0.0 www.codeanywhere.com
+0.0.0.0 coder.com
+0.0.0.0 www.coder.com
+0.0.0.0 code-server.dev
+0.0.0.0 www.code-server.dev
+
+# AWS AppStream & WorkSpaces
+0.0.0.0 appstream2.amazonaws.com
+0.0.0.0 clients.amazonworkspaces.com
+0.0.0.0 workspaces.amazonaws.com
+
+# Microsoft Azure Virtual Desktop / Windows 365
+0.0.0.0 rdweb.wvd.microsoft.com
+0.0.0.0 windows365.microsoft.com
+
+# Google Cloud Workstations
+0.0.0.0 remotedesktop.google.com
+
