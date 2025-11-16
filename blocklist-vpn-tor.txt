@@ -1,0 +1,113 @@
+# VPN & Tor Blocklist for DNS Blocker
+# Conservative list - blocks VPN/Tor/Proxy sites without breaking normal apps
+# Maintained at: https://github.com/yourusername/dns-blocker
+
+# NordVPN
+0.0.0.0 nordvpn.com
+0.0.0.0 www.nordvpn.com
+0.0.0.0 downloads.nordcdn.com
+0.0.0.0 api.nordvpn.com
+
+# ExpressVPN
+0.0.0.0 expressvpn.com
+0.0.0.0 www.expressvpn.com
+0.0.0.0 download.expressvpn.xyz
+0.0.0.0 api.expressvpn.com
+
+# ProtonVPN
+0.0.0.0 protonvpn.com
+0.0.0.0 www.protonvpn.com
+0.0.0.0 api.protonvpn.ch
+0.0.0.0 account.protonvpn.com
+
+# Surfshark
+0.0.0.0 surfshark.com
+0.0.0.0 www.surfshark.com
+0.0.0.0 api.surfshark.com
+
+# CyberGhost
+0.0.0.0 cyberghostvpn.com
+0.0.0.0 www.cyberghostvpn.com
+
+# Private Internet Access (PIA)
+0.0.0.0 privateinternetaccess.com
+0.0.0.0 www.privateinternetaccess.com
+
+# TunnelBear
+0.0.0.0 tunnelbear.com
+0.0.0.0 www.tunnelbear.com
+0.0.0.0 api.tunnelbear.com
+
+# IPVanish
+0.0.0.0 ipvanish.com
+0.0.0.0 www.ipvanish.com
+
+# Windscribe
+0.0.0.0 windscribe.com
+0.0.0.0 www.windscribe.com
+0.0.0.0 api.windscribe.com
+
+# HotspotShield
+0.0.0.0 hotspotshield.com
+0.0.0.0 www.hotspotshield.com
+
+# Hide.me
+0.0.0.0 hide.me
+0.0.0.0 www.hide.me
+0.0.0.0 member.hide.me
+
+# Mullvad
+0.0.0.0 mullvad.net
+0.0.0.0 www.mullvad.net
+0.0.0.0 api.mullvad.net
+
+# TorGuard
+0.0.0.0 torguard.net
+0.0.0.0 www.torguard.net
+
+# PureVPN
+0.0.0.0 purevpn.com
+0.0.0.0 www.purevpn.com
+
+# Zenmate
+0.0.0.0 zenmate.com
+0.0.0.0 www.zenmate.com
+
+# VyprVPN
+0.0.0.0 vyprvpn.com
+0.0.0.0 www.vyprvpn.com
+
+# StrongVPN
+0.0.0.0 strongvpn.com
+0.0.0.0 www.strongvpn.com
+
+# Tor Project
+0.0.0.0 torproject.org
+0.0.0.0 www.torproject.org
+0.0.0.0 dist.torproject.org
+0.0.0.0 bridges.torproject.org
+0.0.0.0 check.torproject.org
+
+# Web-Based Proxies
+0.0.0.0 kproxy.com
+0.0.0.0 www.kproxy.com
+0.0.0.0 croxyproxy.com
+0.0.0.0 www.croxyproxy.com
+0.0.0.0 proxysite.com
+0.0.0.0 www.proxysite.com
+0.0.0.0 hidester.com
+0.0.0.0 www.hidester.com
+0.0.0.0 proxfree.com
+0.0.0.0 www.proxfree.com
+0.0.0.0 filterbypass.me
+0.0.0.0 www.filterbypass.me
+
+# Additional VPN Services
+0.0.0.0 hidemyass.com
+0.0.0.0 www.hidemyass.com
+0.0.0.0 vpngate.net
+0.0.0.0 www.vpngate.net
+0.0.0.0 opera-vpn.com
+0.0.0.0 betternet.co
+0.0.0.0 www.betternet.co
+

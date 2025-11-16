@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+ "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>Label</key><string>com.blocker.force-dns</string>
+
+    <key>RunAtLoad</key><true/>
+    <key>StartInterval</key><integer>20</integer>
+
+    <key>WatchPaths</key>
+    <array>
+      <string>/Library/Preferences/SystemConfiguration/preferences.plist</string>
+      <string>/Library/Preferences/SystemConfiguration/com.apple.airport.preferences.plist</string>
+    </array>
+
+    <key>ProgramArguments</key>
+    <array>
+      <string>/usr/local/sbin/force-dns.sh</string>
+    </array>
+
+    <key>StandardOutPath</key><string>/var/log/force-dns.out</string>
+    <key>StandardErrorPath</key><string>/var/log/force-dns.err</string>
+  </dict>
+</plist>
