@@ -31,7 +31,7 @@ Blocks adult content, malware, and prevents DNS-over-HTTPS (DoH) bypasses.
 ## 🚀 Quick Install
 
 ```bash
-git clone https://github.com/yourusername/dns-blocker.git
+git clone https://github.com/kbc0des/macOS-force-dns.git
 cd dns-blocker
 sudo ./install.sh
 ```
