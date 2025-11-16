@@ -11,7 +11,8 @@ Blocks adult content, malware, and prevents DNS-over-HTTPS (DoH) bypasses.
 - ✅ Persists across reboots and network changes
 - ✅ Disables DNS-over-HTTPS in Chrome, Firefox, Brave, Edge, Opera, Vivaldi, Safari
 - ✅ Disables Safari iCloud Private Relay (prevents DNS bypass)
-- ✅ Blocks VPN, Tor, and browser-within-browser services via `/etc/hosts` (138 domains)
+- ✅ Blocks VPN, Tor, and browser-within-browser services via `/etc/hosts` (170 entries)
+- ✅ Forces SafeSearch on major search engines (Google, Bing, DuckDuckGo, Yandex, Brave)
 - ✅ Applies system-wide to all users (admin installs for non-admin users)
 - ✅ Re-checks and re-applies DNS every 20 seconds
 - ✅ Self-healing: automatically restores settings if tampered with
@@ -160,8 +161,9 @@ Restart the browser after installation. Check browser settings:
 ## ⚠️ Important Notes
 
 - **Target Users**: Designed for admins to install system-wide for **non-admin users**. Non-admin users cannot bypass these restrictions.
-- **VPN/Tor Blocking**: Blocks 138 VPN, Tor, and remote desktop domains via `/etc/hosts`. Prevents installation, authentication, and updates of VPN clients.
+- **VPN/Tor Blocking**: Blocks 161 VPN, Tor, and remote desktop domains via `/etc/hosts`. Prevents installation, authentication, and updates of VPN clients.
 - **Browser-Within-Browser Blocking**: Blocks cloud desktop services (Kasm, Shadow, Paperspace), browser testing platforms (BrowserStack, LambdaTest), remote development environments (Replit, Gitpod, GitHub Codespaces), and enterprise browser isolation services.
+- **SafeSearch Enforcement**: Forces SafeSearch on Google, Bing, DuckDuckGo, Yandex, and Brave by redirecting to their safe search IPs. Blocks alternative search engines without SafeSearch support (StartPage, Qwant, Ecosia, SearX).
 - **Admin Users**: Admin users can temporarily override settings, but they will auto-revert within 20 seconds.
 - **Network Services**: Script applies to all active services (Wi-Fi, Ethernet, Thunderbolt, etc.)
 - **Safari Private Relay**: Automatically disabled to prevent DNS bypass via iCloud+.
@@ -195,7 +197,8 @@ blocker-script/
 
 - **Forces Cloudflare Family DNS** which filters adult content and malware
 - **Disables DoH/DoT** to prevent DNS bypass at the application level
-- **Blocks VPN/Tor/Remote Desktop domains** via self-healing `/etc/hosts` entries (138 domains)
+- **Blocks VPN/Tor/Remote Desktop domains** via self-healing `/etc/hosts` entries (170 entries)
+- **Forces SafeSearch** on major search engines (Google, Bing, DuckDuckGo, Yandex, Brave)
 - **Disables Safari Private Relay** to prevent iCloud+ DNS bypass
 - **System-wide enforcement** that persists across network changes
 - **Automatic monitoring** detects and reverts unauthorized DNS changes every 20 seconds
@@ -229,7 +232,7 @@ Pull requests are welcome! For major changes, please open an issue first to disc
 A: Admins who want to enforce DNS filtering for **non-admin users** (e.g., parents, employers, educators). Non-admin users cannot bypass these restrictions without root access.
 
 ### Q: Will this block VPNs and Tor?
-A: Yes! It blocks 138 VPN, Tor, and bypass service domains via `/etc/hosts`, preventing:
+A: Yes! It blocks 170 VPN, Tor, and bypass service entries via `/etc/hosts`, preventing:
 - VPN client downloads and updates
 - VPN authentication
 - Tor Browser downloads
@@ -257,6 +260,23 @@ A: **No.** The blocklist is conservative and only targets VPN/Tor/proxy domains.
 
 ### Q: What about Safari Private Relay?
 A: It's automatically disabled via managed preference. Non-admin users cannot re-enable it.
+
+### Q: How does SafeSearch enforcement work?
+A: The script **forces SafeSearch** on major search engines by redirecting them to their official SafeSearch IP addresses in `/etc/hosts`:
+
+**Redirected to SafeSearch:**
+- **Google** → 216.239.38.120 (SafeSearch enforced)
+- **Bing** → 150.171.28.16 (Strict SafeSearch)
+- **DuckDuckGo** → 52.149.247.1 (SafeSearch enforced)
+- **Yandex** → 213.180.193.56 (Family filter)
+- **Brave Search** → 3.33.205.124 (SafeSearch enforced)
+
+**Blocked entirely** (no SafeSearch support):
+- Yahoo, AOL, StartPage, Qwant, Mojeek, Ecosia, SearX
+
+This means users **cannot disable SafeSearch** in their browser settings or URL parameters - it's enforced at the DNS/hosts level. All search results will be filtered for adult content automatically.
+
+**Note:** This works in combination with Cloudflare Family DNS (1.1.1.3) which provides an additional layer of content filtering.
 
 ### Q: Will this block cloud development tools?
 A: **Yes, by design.** The blocklist includes cloud development environments that can be used to bypass restrictions:

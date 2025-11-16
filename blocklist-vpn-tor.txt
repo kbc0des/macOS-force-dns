@@ -203,3 +203,42 @@
 # Google Cloud Workstations
 0.0.0.0 remotedesktop.google.com
 
+# Browser SafeSearch Enforcement
+# Redirects search engines to their SafeSearch IPs
+52.149.247.1 duckduckgo.com
+52.149.247.1 www.duckduckgo.com
+216.239.38.120 google.com
+216.239.38.120 www.google.com
+150.171.28.16 bing.com
+150.171.28.16 www.bing.com
+213.180.193.56 yandex.com
+213.180.193.56 www.yandex.com
+3.33.205.124 search.brave.com
+
+# Block search engines without SafeSearch support
+0.0.0.0 search.yahoo.com
+0.0.0.0 search.aol.com
+0.0.0.0 www.startpage.com
+0.0.0.0 startpage.com
+0.0.0.0 www.qwant.com
+0.0.0.0 qwant.com
+0.0.0.0 www.mojeek.com
+0.0.0.0 mojeek.com
+0.0.0.0 www.ecosia.org
+0.0.0.0 ecosia.org
+0.0.0.0 searx.be
+0.0.0.0 www.searx.be
+
+# Additional Virtual Browser Services
+0.0.0.0 browser.lol
+0.0.0.0 www.browserling.com
+0.0.0.0 browserling.com
+0.0.0.0 browser.networkchuck.com
+0.0.0.0 networkchuck.com
+0.0.0.0 www.offidocs.com
+0.0.0.0 offidocs.com
+0.0.0.0 www.onworks.net
+0.0.0.0 onworks.net
+0.0.0.0 testsigma.com
+0.0.0.0 www.testsigma.com
+
